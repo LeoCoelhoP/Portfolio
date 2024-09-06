@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 import { useTranslation } from 'react-i18next';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -7,14 +7,17 @@ import useClickSound from '../../../hooks/useClickSound';
 import LinkedInIcon from '../../icons/LinkedInIcon';
 import MailIcon from '../../icons/MailIcons';
 import WhatsappIcon from '../../icons/WhatsappIcon';
+import { PortfolioContext } from '../../../Contexts/PortfolioContext';
 
 export default function ContactMe() {
-  const { t } = useTranslation();
   const [displayEmail, setDisplayEmail] = useState(false);
   const [displayWpp, setDisplayWpp] = useState(false);
+  const { portfolioState } = useContext(PortfolioContext);
+  const { t } = useTranslation();
   const click = useClickSound();
 
   function handleSound() {
+    if (portfolioState.isMobile) return;
     click();
   }
   function handleEmailButtonClick() {
