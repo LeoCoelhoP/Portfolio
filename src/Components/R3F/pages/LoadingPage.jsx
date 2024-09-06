@@ -105,7 +105,7 @@ export default function LoadingPage({ loadingProgress }) {
                         className='w-[50px] h-[50px]'
                         icon={
                           <AboutMeIcon
-                            className='stroke-white w-[32px] ml-4'
+                            className='stroke-white w-[32px] lg:ml-4 '
                             size={'100%'}
                           />
                         }
@@ -118,7 +118,7 @@ export default function LoadingPage({ loadingProgress }) {
                         className='w-[50px] h-[50px]'
                         icon={
                           <ContactMeIcon
-                            className='stroke-white w-[32px] ml-4'
+                            className='stroke-white w-[32px] lg:ml-4'
                             size={'100%'}
                           />
                         }
@@ -131,7 +131,7 @@ export default function LoadingPage({ loadingProgress }) {
                         className='w-[50px] h-[50px]'
                         icon={
                           <CodePlusIcon
-                            className='stroke-white w-[32px] ml-4'
+                            className='stroke-white w-[32px] lg:ml-4'
                             size={'100%'}
                           />
                         }
@@ -144,7 +144,7 @@ export default function LoadingPage({ loadingProgress }) {
                         className='w-[50px] h-[50px]'
                         icon={
                           <ReturnIcon
-                            className='stroke-white w-[32px] ml-4'
+                            className='stroke-white w-[32px] lg:ml-4'
                             size={'100%'}
                           />
                         }

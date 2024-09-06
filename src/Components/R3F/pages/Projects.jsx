@@ -6,8 +6,11 @@ import GitHubIcon from '../../icons/GitHubIcon';
 import MongoDbIcon from '../../icons/MongoDbIcon';
 import NodeJsIcon from '../../icons/NodeJsIcon';
 import ReactIcon from '../../icons/ReactIcon';
+import { useContext } from 'react';
+import { PortfolioContext } from '../../../Contexts/PortfolioContext';
 
 export default function Projects() {
+  const { portfolioState } = useContext(PortfolioContext);
   const { t } = useTranslation();
   const click = useClickSound();
 
@@ -25,6 +28,7 @@ export default function Projects() {
   ];
 
   function handleSound() {
+    if (portfolioState.isMobile) return;
     click();
   }
 

@@ -18,6 +18,8 @@ export default function GameOverScreen() {
   }
 
   useEffect(() => {
+    if (portfolioState.isMobile) return;
+
     if (
       portfolioState.isPlayerDead &&
       portfolioState.currentModal === '' &&
@@ -35,7 +37,11 @@ export default function GameOverScreen() {
       gameOverAudio.pause();
       gameOverAudio.currentTime = 0;
     }
-  }, [portfolioState.isPlayerDead, portfolioState.currentModal]);
+  }, [
+    portfolioState.isPlayerDead,
+    portfolioState.currentModal,
+    portfolioState.isMobile,
+  ]);
 
   return (
     <div

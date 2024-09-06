@@ -37,6 +37,9 @@ export default function MobileController({ setFiring }) {
     <div className='absolute z-20 flex items-center justify-between w-full bottom-24 '>
       <div className='z-20 flex items-center justify-center '>
         <button
+          style={{
+            WebkitTouchCallout: 'none',
+          }}
           className='game-button red w-[50px] z-20'
           onTouchStart={handleWalk}
           onTouchEnd={(e) => handleWalk(e, 'left', false)}
@@ -47,6 +50,9 @@ export default function MobileController({ setFiring }) {
           <p className='mb-1'>←</p>
         </button>
         <button
+          style={{
+            WebkitTouchCallout: 'none',
+          }}
           className='game-button red w-[50px] '
           onTouchStart={(e) => handleWalk(e, 'right')}
           onTouchEnd={(e) => handleWalk(e, 'right', false)}
@@ -58,6 +64,9 @@ export default function MobileController({ setFiring }) {
         </button>
       </div>
       <button
+        style={{
+          WebkitTouchCallout: 'none',
+        }}
         className='game-button green w-[60px]'
         onTouchStart={() => setFiring(true)}
         onTouchEnd={() => setFiring(false)}
