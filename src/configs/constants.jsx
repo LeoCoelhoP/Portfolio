@@ -1,8 +1,3 @@
-import JavaScriptIcon from '../components/icons/JavaScriptIcon';
-import MongoDbIcon from '../Components/icons/MongoDbIcon';
-import NodeJsIcon from '../Components/icons/NodeJsIcon';
-import ReactIcon from '../Components/icons/ReactIcon';
-
 const CLICK_VOLUME = 0.2;
 
 const BULLET_SPEED = 20;
@@ -26,34 +21,6 @@ const PLAYER_CONTROLLER = {
   MAX_VEL: 3,
 };
 
-const SKILLS = [
-  {
-    icon: (
-      <JavaScriptIcon
-        className='w-full stroke-black fill-yellow-400'
-        size={35}
-      />
-    ),
-    name: 'Javascript',
-    knowledge: 5,
-  },
-  {
-    icon: <ReactIcon className='w-full stroke-sky-400' size={35} />,
-    name: 'React',
-    knowledge: 5,
-  },
-  {
-    icon: <NodeJsIcon className='w-full stroke-lime-500' size={35} />,
-    name: 'NodeJS',
-    knowledge: 4,
-  },
-  {
-    icon: <MongoDbIcon className='w-full' size={35} />,
-    name: 'MongoDB',
-    knowledge: 4,
-  },
-];
-
 export {
   BULLET_SPEED,
   SPECIAL_OBSTACLE_PERCENTAGE_TO_APPEAR,
@@ -61,7 +28,6 @@ export {
   HITTED_OBSTACLE_SOUND_VOLUME,
   OBSTACLE_VELOCITY,
   PLAYER_CONTROLLER,
-  SKILLS,
   WEAPON_OFFSET,
   OBSTACLE_HEALTH_MULTIPLY_FACTOR,
   OBSTACLE_HEALTH_STANDARD_HEALTH,

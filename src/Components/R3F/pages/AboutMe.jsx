@@ -1,10 +1,41 @@
 import { useTranslation } from 'react-i18next';
 
-import { SKILLS } from '../../../configs/constants';
 import JoyStickIcon from '../../icons/JoyStickIcon';
 import BrazilFlagIcon from '../../icons/BrazilFlagIcon';
 import SpainFlagIcon from '../../icons/SpainFlagIcon';
 import UsaFlagIcon from '../../icons/UsaFlagIcon';
+import JavaScriptIcon from '../../icons/JavaScriptIcon';
+import ReactIcon from '../../icons/ReactIcon';
+import NodeJsIcon from '../../icons/NodeJsIcon';
+import MongoDbIcon from '../../icons/MongoDbIcon';
+
+const SKILLS = [
+  {
+    icon: (
+      <JavaScriptIcon
+        className='w-full stroke-black fill-yellow-400'
+        size={35}
+      />
+    ),
+    name: 'Javascript',
+    knowledge: 5,
+  },
+  {
+    icon: <ReactIcon className='w-full stroke-sky-400' size={35} />,
+    name: 'React',
+    knowledge: 5,
+  },
+  {
+    icon: <NodeJsIcon className='w-full stroke-lime-500' size={35} />,
+    name: 'NodeJS',
+    knowledge: 4,
+  },
+  {
+    icon: <MongoDbIcon className='w-full' size={35} />,
+    name: 'MongoDB',
+    knowledge: 4,
+  },
+];
 
 export default function AboutMe() {
   const { t } = useTranslation();
