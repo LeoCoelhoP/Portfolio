@@ -44,26 +44,11 @@ export default function Experience() {
     setBullets([]);
   }, [portfolioState.isPlayerDead]);
 
-  useEffect(() => {
-    if (
-      portfolioState.isMuted ||
-      portfolioState.isPlayerDead ||
-      portfolioState.isPaused ||
-      portfolioState.isModalOpen ||
-      portfolioState.isMobile ||
-      !portfolioState.play
-    ) {
-      if (!portfolioState.isMobile) {
-        backgroundAudio.pause();
-        backgroundAudio.currentTime = 0;
-      }
-      return;
-    }
-
+  function handleAudioPlay() {
     backgroundAudio.volume = 0;
     backgroundAudio.loop = true;
     backgroundAudio.play();
-
+    // Gradually increase the volume
     const intervalId = setInterval(() => {
       if (backgroundAudio.volume < 0.2) {
         backgroundAudio.volume = Math.min(backgroundAudio.volume + 0.01, 0.2);
@@ -71,20 +56,16 @@ export default function Experience() {
         clearInterval(intervalId);
       }
     }, 100);
+  }
 
-    return () => {
-      clearInterval(intervalId);
+  useEffect(() => {
+    if (portfolioState.play && !portfolioState.isMobile) {
+      handleAudioPlay();
+    } else {
       backgroundAudio.pause();
       backgroundAudio.currentTime = 0;
-    };
-  }, [
-    portfolioState.isMuted,
-    portfolioState.isPlayerDead,
-    portfolioState.isPaused,
-    portfolioState.isModalOpen,
-    portfolioState.play,
-    portfolioState.isMobile,
-  ]);
+    }
+  }, [portfolioState.play, portfolioState.isMobile]);
 
   if (!portfolioState) return null;
 
@@ -175,6 +156,7 @@ export default function Experience() {
           loadingProgress={loadingProgress}
         >
           <Preload all />
+
           <Physics>
             <Floor />
             <PlayerController
@@ -196,12 +178,12 @@ export default function Experience() {
             position={[-10, 8, 0]}
             color='white'
             intensity={4}
-            shadow-mapSize-width={portfolioState.isMobile ? 512 : 1024}
-            shadow-mapSize-height={portfolioState.isMobile ? 512 : 1024}
-            shadow-camera-far={25}
-            shadow-camera-left={-40}
-            shadow-camera-right={10}
-            shadow-camera-top={10}
+            shadow-mapSize-width={portfolioState.isMobile ? 256 : 1024}
+            shadow-mapSize-height={portfolioState.isMobile ? 256 : 1024}
+            shadow-camera-far={portfolioState.isMobile ? 20 : 25}
+            shadow-camera-left={portfolioState.isMobile ? -37 : -40}
+            shadow-camera-right={portfolioState.isMobile ? 5 : 10}
+            shadow-camera-top={portfolioState.isMobile ? 5 : 10}
             shadow-camera-bottom={-10}
             castShadow
           />

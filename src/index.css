@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+.mobile-controller {
+  -webkit-overflow-scrolling: touch;
+}
 
 *,
 canvas,

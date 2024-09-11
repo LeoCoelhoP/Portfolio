@@ -18,7 +18,7 @@ export default function PortfolioProvider({ children }) {
     isMuted: false,
     play: false,
     currentModal: '',
-    isMobile: window.innerWidth <= 768,
+    isMobile: window.innerWidth <= 1025,
     xp: 0,
     rank: ranks[0],
     ranks,

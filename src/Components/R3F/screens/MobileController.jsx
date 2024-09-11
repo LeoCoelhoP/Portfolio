@@ -21,7 +21,7 @@ export default function MobileController({ setFiring }) {
   function handleWalk(e, direction = 'left', firstClick = true) {
     const key = direction === 'left' ? 'a' : 'd';
     const code = direction === 'left' ? 'KeyA' : 'KeyD';
-    console.log(key);
+
     const keyboardEvent = new KeyboardEvent(firstClick ? 'keydown' : 'keyup', {
       bubbles: true,
       cancelable: true,
@@ -34,7 +34,7 @@ export default function MobileController({ setFiring }) {
   }
 
   return (
-    <div className='absolute z-20 flex items-center justify-between w-full bottom-24 '>
+    <div className='absolute z-20 flex items-center justify-between w-full bottom-24 mobile-controller '>
       <div className='z-20 flex items-center justify-center '>
         <button
           style={{

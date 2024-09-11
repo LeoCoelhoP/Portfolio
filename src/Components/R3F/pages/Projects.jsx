@@ -18,30 +18,37 @@ export default function Projects() {
     {
       name: 'Way To Ace',
       description: t('wayToAceDescription'),
-      link: '',
+      url: 'https://waytoace.onrender.com/',
     },
     {
       name: 'Seeking A Cause',
+      url: 'https://seekingacause-com.onrender.com/',
       description: t('seekingACauseDescription'),
-      link: '',
     },
   ];
 
   function handleSound() {
-    if (portfolioState.isMobile) return;
+    if (portfolioState.isMobile && portfolioState.isMuted) return;
     click();
+  }
+
+  function handleAccess(url) {
+    handleSound();
+    if (url) {
+      window.open(url, '_blank');
+    }
   }
 
   return (
     <div className='absolute z-10 flex flex-col items-center justify-start w-full h-full gap-1 px-4 pb-32 overflow-y-auto bg-zinc-900 '>
       <BackButton />
-      <div className='w-full pt-4'>
+      <div className='z-20 w-5/6 pt-4'>
         <button
           onClick={() => {
             handleSound();
             window.open('https://github.com/LeoCoelhoP', '_blank');
           }}
-          className='flex items-center justify-center  !important shrink-0 game-button h-[50px] mx-0 mt-0 w-[calc(100%-70px)] ml-auto md:mx-auto  md:w-[85%] lg:w-[60%] '
+          className='flex items-center justify-center  !important shrink-0 game-button h-[50px] mx-0 mt-0 w-[calc(100%-70px)] ml-auto md:mx-auto  md:w-[85%] lg:w-[71%] '
         >
           <GitHubIcon className={'stroke-white'} size={36} />
           <p className='text-xl font-bold text-white'>
@@ -53,7 +60,6 @@ export default function Projects() {
       <div className='md:flex md:justify-between md:items-center md:gap-8 md:w-[90%] lg:w-[60%] '>
         {projects.map((project) => (
           <div
-            onClick={handleSound}
             key={project.name}
             className='flex items-center justify-between w-full gap-6 p-4 mt-2 text-2xl text-white rounded-md shadow-2xl bg-zinc-800 drop-shadow-lg h-fit bg-opacity-80'
           >
@@ -78,7 +84,10 @@ export default function Projects() {
                     <MongoDbIcon className='w-full' size={35} />
                   </div>
                   <div className='w-full relative top-[0.7rem]'>
-                    <button className='w-5/6 game-button h-fit '>
+                    <button
+                      className='w-5/6 game-button h-fit '
+                      onClick={() => handleAccess(project.url)}
+                    >
                       {t('access')}
                     </button>
                   </div>

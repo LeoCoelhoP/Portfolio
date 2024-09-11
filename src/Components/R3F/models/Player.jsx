@@ -43,9 +43,9 @@ export default function Model(props) {
       <Text
         position={[0.1, 2.8, 0]}
         color={rankColor}
+        font='public/fonts/Roboto-Black.ttf'
         fontWeight='bold'
         fontSize={0.3}
-        letterSpacing={0.2}
       >
         {portfolioState.rank}
       </Text>

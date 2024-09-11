@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 
 import PropTypes from 'prop-types';
 import { useFrame } from '@react-three/fiber';

@@ -20,6 +20,10 @@ export default function LoadingPage({ loadingProgress }) {
       <div className='flex flex-col items-center w-5/6 lg:w-[90%] gap-6 mt-8 overflow-y-auto overflow-x-hidden lg:mt-4'>
         <h1 className='font-bold'>{t('loadingPageText')}</h1>
         <div className='flex flex-col items-start gap-2 text-lg font-semibold'>
+          <h1 className='flex items-center gap-2 text-sm font-bold'>
+            <span className='text-xl '>ℹ️</span>
+            {t('loadingPageForthInstruction')}
+          </h1>
           <h1 className='flex items-center gap-2 text-sm'>
             <span className='text-xl'>ℹ️</span>
             {t('loadingPageFirstInstruction')}
@@ -31,10 +35,6 @@ export default function LoadingPage({ loadingProgress }) {
           <h1 className='flex items-center gap-2 text-sm'>
             <span className='text-xl'>ℹ️</span>
             {t('loadingPageThirdInstruction')}
-          </h1>
-          <h1 className='flex items-center gap-2 text-sm'>
-            <span className='text-xl'>ℹ️</span>
-            {t('loadingPageForthInstruction')}
           </h1>
         </div>
 
