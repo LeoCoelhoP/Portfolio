@@ -7,11 +7,11 @@ export default function Obstacle({ obstacle, obstacleRef }) {
     <mesh ref={obstacleRef}>
       <planeGeometry args={[Boolean(obstacle.specialObstacle) ? 7 : 3.5, 4]} />
       <meshStandardMaterial transparent opacity={0.4} color='blue' />
-      <Text font='public/fonts/Roboto-Black.ttf' position={[0, 1.3, 0.015]}>
+      <Text font='/fonts/Roboto-Black.ttf' position={[0, 1.3, 0.015]}>
         {obstacle.health}
       </Text>
       {obstacle.specialObstacle && (
-        <Text font='public/fonts/Roboto-Black.ttf' position={[0, 0, 0.015]}>
+        <Text font='/fonts/Roboto-Black.ttf' position={[0, 0, 0.015]}>
           {t(`${obstacle.specialObstacle}`)}
         </Text>
       )}
