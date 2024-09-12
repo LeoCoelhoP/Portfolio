@@ -156,4 +156,4 @@ export default function Map(props) {
   );
 }
 
-useGLTF.preload('/map.glb');
+useGLTF.preload('/models/map.glb');
