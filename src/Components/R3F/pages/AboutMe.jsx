@@ -64,7 +64,7 @@ export default function AboutMe() {
         {/* Description and Profile Container */}
         <div className='flex flex-col justify-end lg:w-1/2 grow-0'>
           <div className='flex flex-col  w-full h-fit items-center  md:h-[87.5%] bg-opacity-80 md:items-center lg:h-full lg:w-fit'>
-            <div className=' h-[200px] p-2  w-full sm:w-1/2 md:w-2/3 md:h-[250px] lg:w-2/3 lg:mb-auto'>
+            <div className=' h-[200px] p-2  w-full sm:w-1/2 md:w-2/3 md:h-[250px] lg:w-2/3 lg:mb-auto rounded-2xl'>
               <img
                 className='w-full h-full rounded-xl bg-zinc-200 shrink-0'
                 src='/images/profile.jpg'
