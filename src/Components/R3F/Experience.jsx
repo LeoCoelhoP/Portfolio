@@ -59,13 +59,23 @@ export default function Experience() {
   }
 
   useEffect(() => {
-    if (portfolioState.play && !portfolioState.isMobile) {
+    if (
+      portfolioState.play &&
+      !portfolioState.isMobile &&
+      !portfolioState.isMuted &&
+      !portfolioState.isPlayerDead
+    ) {
       handleAudioPlay();
     } else {
       backgroundAudio.pause();
       backgroundAudio.currentTime = 0;
     }
-  }, [portfolioState.play, portfolioState.isMobile]);
+  }, [
+    portfolioState.play,
+    portfolioState.isMobile,
+    portfolioState.isMuted,
+    portfolioState.isPlayerDead,
+  ]);
 
   if (!portfolioState) return null;
 
