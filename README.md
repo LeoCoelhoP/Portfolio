@@ -15,30 +15,6 @@ Smooth Animations: Attractive transitions and animations for better user experie
 Skills Section: Displays technical skills with icons.
 Contact Form: Allows visitors to contact me.
 
-Installation
-Clone the repository:
-
-bash
-Copiar código
-git clone https://github.com/yourusername/your-portfolio.git
-Navigate to the project directory:
-
-bash
-Copiar código
-cd your-portfolio
-Install dependencies:
-
-bash
-Copiar código
-npm install
-Usage
-Start the development server:
-
-bash
-Copiar código
-npm start
-Open your browser and visit http://localhost:3000.
-
 Technologies Used
 React: Frontend framework
 React Three Fiber
