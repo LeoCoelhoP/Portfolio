@@ -21,6 +21,7 @@
 <ul>
   <li>React: Frontend framework</li>
   <li>React Three Fiber</li>
+  <li>Rapier Phisics</li>
   <li>ThreeJS</li>
   <li>Tailwind CSS</li>
   <li>Framer Motion: For animations</li>
